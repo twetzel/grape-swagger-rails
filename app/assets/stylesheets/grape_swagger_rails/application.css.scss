@@ -1,0 +1,102 @@
+/*
+*= require ./reset
+*= require ./screen
+*= require_self
+*/
+@import "magic-min";
+
+@import "reset";
+@import "screen";
+
+
+#header .swagger-ui-wrap #api_selector {
+    input, select {
+        width: 200px;
+        font-size: 15px;
+        font-weight: 300;
+    }
+    a.btn {
+        font-weight: 400 !important;
+    }
+    input, select, a.btn {
+        border: solid 1px #aaa;
+        line-height: 18px;
+        padding: 4px 10px !important;
+        height: 28px;
+        border-radius: 2px;
+    }
+}
+
+
+.container {
+    display: block; position: relative;
+    margin: 0; padding: 0 10px;
+    width: auto;
+    max-width: none;
+}
+
+
+#api_info {
+    padding: 0 0 10px; margin: 0 0 20px;
+    border-bottom: solid 1px #ccc;
+    .info_contact {
+        display: block; position: relative;
+        margin: 0; padding: 0 0 10px;
+        /* float: right; */
+        a {
+            display: block; display: inline-block; position: relative;
+            margin: 0; padding: 5px 15px;
+            border: solid 1px darken( #069, 10% );
+            border-radius: 3px;
+            text-decoration: none;
+            background: #069;
+            color: #fff;
+            font-weight: 300;
+            @include antialiased_text;
+            &:hover {
+                border: solid 1px darken( #069, 20% );
+                background: darken( #069, 10% );
+            }
+        }
+    }
+}
+
+
+.swagger-section .swagger-ui-wrap ul#resources {
+    li.resource {
+        div.heading h2 {
+            color: #999;
+            font-weight: 300;
+            font-size: 16px;
+            a {
+              color: #333;
+              font-weight: 600;
+              font-size: 18px;
+            }
+        }
+        ul.endpoints {
+            padding: 0 10px;
+            
+            li.endpoint ul.operations li.operation div.content div.sandbox_header {
+                input.submit {
+                    padding: 5px 15px;
+                    border: solid 1px #ccc;
+                    border-radius: 3px;
+                    background: #f3f2f2;
+                }
+                a { padding: 7px 0 0 10px; }
+            }
+        }
+    }
+    
+    
+}
+
+
+.footer h4 {
+    border-top: solid 1px #ccc;
+    text-align: center;
+    line-height: 30px;
+    padding: 10px;
+}
+

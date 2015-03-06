@@ -56,25 +56,46 @@
 </head>
 
 <body class="swagger-section">
-<div id='header'>
-  <div class="swagger-ui-wrap">
-    <a id="logo" href="<%= GrapeSwaggerRails.options.app_url %>"><%= GrapeSwaggerRails.options.app_name %></a>
+  <div id='header'>
+    <div class="swagger-ui-wrap">
+      <a id="logo" href="<%= GrapeSwaggerRails.options.app_url %>">
+        <%= GrapeSwaggerRails.options.app_name %>
+      </a>
 
-    <form id='api_selector'>
-      <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
-      <div class='input'><a id="explore" href="#">Explore</a></div>
-    </form>
+      <form id='api_selector'>
+        <div class='input'>
+          <% if 3 == 4 %>
+          <input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/>
+          <% end %>
+          <select name="baseUrl" id="input_baseUrl" class="form-control input-sm">
+            <% if Rails.env.development? %>
+              <option value="http://localhost:3000/api/v1/swagger_doc">Web - API</option>
+              <option value="http://localhost:3000/api/backend/v1/swagger_doc">Backend - API</option>
+              <option value="http://localhost:3000/api/admin/v1/swagger_doc">Admin - API</option>
+            <% else %>
+              <option value="http://lightwater.de/api/v1/swagger_doc">Web - API</option>
+              <option value="http://lightwater.de/api/backend/v1/swagger_doc">Backend - API</option>
+              <option value="http://lightwater.de/api/admin/v1/swagger_doc">Admin - API</option>
+            <% end %>
+          </select>
+        </div>
+        <div class='input'>
+          <input placeholder="api_key" id="input_apiKey" name="apiKey" type="text" class="form-control input-sm" />
+        </div>
+        <div class='input'>
+          <a id="explore" href="#" class="btn btn-default btn-sm">Explore</a>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 
-<div id="message-bar" class="swagger-ui-wrap">
-  &nbsp;
-</div>
+  <div id="message-bar" class="swagger-ui-wrap">
+    &nbsp;
+  </div>
 
-<div id="swagger-ui-container" class="swagger-ui-wrap">
+  <div id="swagger-ui-container" class="swagger-ui-wrap">
 
-</div>
+  </div>
 
 </body>
 
