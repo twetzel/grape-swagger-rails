@@ -68,15 +68,9 @@
           <input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/>
           <% end %>
           <select name="baseUrl" id="input_baseUrl" class="form-control input-sm">
-            <% if Rails.env.development? %>
-              <option value="http://localhost:3000/api/v1/swagger_doc">Web - API</option>
-              <option value="http://localhost:3000/api/backend/v1/swagger_doc">Backend - API</option>
-              <option value="http://localhost:3000/api/admin/v1/swagger_doc">Admin - API</option>
-            <% else %>
-              <option value="http://lightwater.de/api/v1/swagger_doc">Web - API</option>
-              <option value="http://lightwater.de/api/backend/v1/swagger_doc">Backend - API</option>
-              <option value="http://lightwater.de/api/admin/v1/swagger_doc">Admin - API</option>
-            <% end %>
+              <option value="/api/v1/swagger_doc">Web - API</option>
+              <option value="/api/backend/v1/swagger_doc">Backend - API</option>
+              <option value="/api/admin/v1/swagger_doc">Admin - API</option>
           </select>
         </div>
         <div class='input'>
