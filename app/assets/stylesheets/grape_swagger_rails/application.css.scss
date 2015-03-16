@@ -92,6 +92,18 @@
     
 }
 
+#app-footer-container {
+    display: block; position: relative;
+    padding: 20px 10px 40px; margin: 0 auto 30px;
+    text-align: center;
+    line-height: 20px;
+    color: #ccc;
+    p { margin: 0; }
+    small {
+        display: block;
+    }
+}
+
 
 .footer h4 {
     border-top: solid 1px #ccc;

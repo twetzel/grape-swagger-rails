@@ -56,11 +56,14 @@
 </head>
 
 <body class="swagger-section">
+  
   <div id='header'>
     <div class="swagger-ui-wrap">
       <a id="logo" href="<%= GrapeSwaggerRails.options.app_url %>">
         <%= GrapeSwaggerRails.options.app_name %>
       </a>
+
+      <% %>
 
       <form id='api_selector'>
         <div class='input'>
@@ -68,9 +71,9 @@
           <input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/>
           <% end %>
           <select name="baseUrl" id="input_baseUrl" class="form-control input-sm">
-              <option value="/api/v1/swagger_doc">Web - API</option>
-              <option value="/api/backend/v1/swagger_doc">Backend - API</option>
-              <option value="/api/admin/v1/swagger_doc">Admin - API</option>
+              <option value="<%= @host_name %>/api/v1/swagger_doc">Web - API</option>
+              <option value="<%= @host_name %>/api/backend/v1/swagger_doc">Backend - API</option>
+              <option value="<%= @host_name %>/api/admin/v1/swagger_doc">Admin - API</option>
           </select>
         </div>
         <div class='input'>
@@ -90,6 +93,13 @@
   <div id="swagger-ui-container" class="swagger-ui-wrap">
 
   </div>
+  
+  <div id="app-footer-container" class="swagger-ui-wrap">
+    <p>&copy; <%= Time.now.year %> berlinmagic</p>
+    <small><%= @host_name %></small>
+  </div>
+  
+  <div class="clearfix"></div>
 
 </body>
 
