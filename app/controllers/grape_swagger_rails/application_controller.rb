@@ -9,7 +9,7 @@ module GrapeSwaggerRails
     def index
       
       # => @host_name = request.host_with_port
-      @host_name = "#{ request.protocol }#{ request.host }#{ request.port == 80 ? "" : ":#{request.port}" }"
+      @host_name = "#{ request.protocol }#{ request.host }#{ request.port.to_i == 80 ? "" : ":#{request.port}" }"
       
     end
   end
